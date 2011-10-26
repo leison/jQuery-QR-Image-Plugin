@@ -1,0 +1,12 @@
+body {
+  padding: 4%;
+  font-family: Arial;
+  text-align: center;
+}
+input {
+  width: 60%;
+  padding: 2px;
+}
+#qr_text {
+  color: gray;
+}

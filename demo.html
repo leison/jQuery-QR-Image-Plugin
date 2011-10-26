@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title> jQuery QR Plugin Demo </title>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+	<script src='jquery.qr_image.js'> </script>
+	<script>
+	   var textBox, qrImage, qrText;
+	   function init()
+	   {
+	     textBox = $("#text");
+		 qrImage = $("#qr_image");
+		 qrText = $("#qr_text");
+	   }
+	   function refreshImage()
+	   {
+	     qrImage.loadQRText(textBox.val(), callback);
+	   }
+	   function callback(text)
+	   {
+	     qrText.text(text);
+	   }
+	</script>
+	<link rel='stylesheet' type='text/css' href='css/css.css'>
+  </head>
+  <body onload='init()'>
+    <h1> jQuery QR Plugin Demo </h1> <hr />
+    <input type='text' id='text' value='Type whatever you want' onkeydown='refreshImage()'><br />
+	<img id='qr_image'><br />
+	<span id='qr_text'> * </span>
+  </body>
+</html>
