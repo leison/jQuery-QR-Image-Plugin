@@ -1,3 +1,7 @@
+String.prototype.startsWith = function(str) 
+{return (this.match("^"+str)==str)}
+
+
 jQuery.fn.loadQRText = function (text, callback_function)
                         {
 						   this.attr('src', 'http://qrcode.kaywa.com/img.php?s=12&d=' + text);
@@ -11,5 +15,11 @@ jQuey.fn.loadQRPhone = function (phone, callback_function)
 				        }
 jQuery.fn.loadQRUrl = function (url, callback_function)
                         {
-						   this.loadQRText('http://' + url, callback_function);
+						   if (url.beginsWith('http://') || url.beginsWith('https://')
+						   {
+						     this.loadQRText(url);
+						   }
+						   else {
+						     this.loadQRText('http://' + url, callback_function);
+						   }
 						}
