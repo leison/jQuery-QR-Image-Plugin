@@ -9,15 +9,15 @@ jQuery.fn.loadQRText = function (text, callback_function)
 					         callback_function(text);
 						}
 
-jQuey.fn.loadQRPhone = function (phone, callback_function)
+jQuery.fn.loadQRPhone = function (phone, callback_function)
                         {
 						   this.loadQRText('tel:' + phone, callback_function );
 				        }
 jQuery.fn.loadQRUrl = function (url, callback_function)
                         {
-						   if (url.beginsWith('http://') || url.beginsWith('https://')
+						   if (url.beginsWith('http://') || url.beginsWith('https://'))
 						   {
-						     this.loadQRText(url);
+						     this.loadQRText(url, callback_function);
 						   }
 						   else {
 						     this.loadQRText('http://' + url, callback_function);
