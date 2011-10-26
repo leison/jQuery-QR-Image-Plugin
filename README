@@ -1,0 +1,23 @@
+It is very easy to use this plugin. 
+
+The very first thing you have to do is to include jQuery (obviously). Then, you'll have to include the plugin. 
+
+Once you've done that, you can try this:
+
+$("img").loadQRText("Hello world"); // This will turn every image into a QR Image which says "Hello world"
+$("#my_first_image").loadQRUrl("brauliovaldivielso.eu"); //This will turn the image whose id is "my_first_image" into a QR Code which says 'http://brauliovaldivielso.eu'
+$(".image_class").loadQRPhone("612879545"); // I guess that you know what this does
+
+In addition, you can use callback functions. Those are like:
+
+function callback(myTextInQR)
+{
+  alert(myTextInQR);
+}
+
+$("#qr_image").loadQRPhone('645645645', callback); // This would show you "tel:645645645" in addition to show the image
+
+
+
+So I think that that's everything.
+
